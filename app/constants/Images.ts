@@ -1,3 +1,15 @@
-export const Images = {
-  navLogo: "/images/logoNav.png",
+export const NavImages = {
+  navLogo: "/logo/logoNav.png",
+  headerSearch: "/icons/Header_search_icon.png",
+  headerBag: "/icons/Header_bag_icon.png",
+  headerProfile: "/icons/Header_profile_icon.png",
+  headerFavorite: "/icons/Header_favorite_icon.png",
+};
+
+export const footerImages = {
+  arrow_forward: "/icons/arrow_forward.png",
+  instagram: "/icons/instagram.png",
+  facebook: "/icons/facebook.png",
+  pinterest: "/icons/pinterest.png",
+  tikTok: "/icons/tikTok.png",
 };

@@ -4,6 +4,7 @@ export const NavImages = {
   headerBag: "/icons/Header_bag_icon.png",
   headerProfile: "/icons/Header_profile_icon.png",
   headerFavorite: "/icons/Header_favorite_icon.png",
+  hamburgerMenu: "/icons/HamburgerMenu.png",
 };
 
 export const footerImages = {
@@ -12,4 +13,9 @@ export const footerImages = {
   facebook: "/icons/facebook.png",
   pinterest: "/icons/pinterest.png",
   tikTok: "/icons/tikTok.png",
+  chatBox: "/icons/chat_icon.png",
+};
+
+export const landingPageImages = {
+  heroImage: "/images/hero.png",
 };

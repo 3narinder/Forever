@@ -1,17 +1,18 @@
 import Image from "next/image";
+import { footerInfo, socialIcons } from "../constants/Static";
 import { footerImages } from "../constants/Images";
-import { footerInfo } from "../constants/Static";
 
 const Footer = () => {
   return (
-    <footer className="grid md:grid-cols-2 bg-Gray_404040 md:px-[120px] md:pt-12 pb-8">
-      {/* Join club */}
-      <div className="flex flex-col lg:w-[496px]">
-        <h5 className="h5 text-white mb-6">
+    <footer className="grid md:grid-cols-2 bg-Gray_404040 lg:px-[120px] px-5 lg:pt-12 pt-8 lg:pb-8 pb-12 relative">
+      {/* Join club left side*/}
+      <div className="flex flex-col lg:w-[496px] lg:mb-0 mb-6">
+        <h5 className="lg:h5 hm4 text-white lg:mb-6 mb-4">
           Join our club, get 15% off for your Birthday
         </h5>
 
-        <div className="relative mb-4">
+        {/* email input */}
+        <div className="relative lg:mb-4 mb-3">
           <input
             type="email"
             placeholder="Enter Your Email Address"
@@ -27,7 +28,8 @@ const Footer = () => {
           />
         </div>
 
-        <div className="flex items-start gap-2 lg:mb-[104px]">
+        {/* checkbox */}
+        <div className="flex items-center gap-2 lg:mb-[104px]">
           <label className="relative flex items-center cursor-pointer group">
             {/* Hidden native checkbox */}
             <input
@@ -39,7 +41,7 @@ const Footer = () => {
             {/* Custom checkbox box */}
             <div
               className="
-                w-5 h-5 border-2 border-white/60
+                w-4 h-4 border-2 border-white/60
                 bg-white
                 group-has-checked:bg-Gray_404040
                 group-has-checked:border-white
@@ -68,39 +70,25 @@ const Footer = () => {
 
           <label
             htmlFor="marketing-checkbox"
-            className="overline-sm text-white cursor-pointer leading-tight"
+            className="lg:overline-sm overlay-mb  text-white cursor-pointer leading-tight capitalize"
           >
             By submitting your email, you agree to receive advertising emails
             from forever.
           </label>
         </div>
 
-        <div className="flex flex-col gap-11">
+        {/* Desktop social icon list */}
+        <div className="lg:flex hidden flex-col gap-11">
           <div className="flex items-center gap-4">
-            <Image
-              src={footerImages?.instagram}
-              alt="Instagram"
-              width={24}
-              height={24}
-            />
-            <Image
-              src={footerImages?.facebook}
-              alt="facebook"
-              width={24}
-              height={24}
-            />
-            <Image
-              src={footerImages?.tikTok}
-              alt="tikTok"
-              width={24}
-              height={24}
-            />
-            <Image
-              src={footerImages?.pinterest}
-              alt="pinterest"
-              width={24}
-              height={24}
-            />
+            {socialIcons?.map((icon) => (
+              <Image
+                key={icon?.name}
+                src={icon?.image}
+                alt="Instagram"
+                width={24}
+                height={24}
+              />
+            ))}
           </div>
 
           <div className="text-Gray_cbcbcb flex items-center gap-2">
@@ -112,21 +100,55 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* support footer links */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {/* support footer links right side */}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:gap-8 gap-4">
         {footerInfo.map((section) => (
-          <div key={section?.id} className="flex flex-col gap-6">
-            <h5 className="h5 text-white capitalize">{section.title}</h5>
+          <div key={section?.id} className="flex flex-col lg:gap-6 gap-2">
+            <h5 className="lg:h5 hm4 text-white capitalize">{section.title}</h5>
 
-            <ul className="flex flex-col gap-3">
+            <ul className="flex flex-col lg:gap-3 gap-2">
               {section.links.map((link) => (
-                <li key={link.id} className="body-lg text-white cursor-pointer">
+                <li
+                  key={link.id}
+                  className="lg:body-lg body-m-lg text-white cursor-pointer"
+                >
                   {link.label}
                 </li>
               ))}
             </ul>
           </div>
         ))}
+      </div>
+
+      {/* mobile social media */}
+      <div className="flex lg:hidden flex-col gap-6 mt-6">
+        <div className="flex items-center gap-4">
+          {socialIcons?.map((icon) => (
+            <Image
+              key={icon?.name}
+              src={icon?.image}
+              alt="Instagram"
+              width={24}
+              height={24}
+            />
+          ))}
+        </div>
+
+        <div className="text-Gray_cbcbcb flex items-center gap-2">
+          <span className="text-xl font-semibold">&copy;</span>
+          <span className="caption-md">2023 forever. All right reserved.</span>
+        </div>
+      </div>
+
+      {/* chat box */}
+
+      <div className="absolute flex items-center justify-center lg:bottom-14 bottom-20 lg:right-28 right-8 bg-primary-600 w-14 h-12 border border-white cursor-pointer">
+        <Image
+          src={footerImages?.chatBox}
+          alt="Chat box of forever"
+          width={24}
+          height={24}
+        />
       </div>
     </footer>
   );

@@ -1,8 +1,11 @@
 import React from "react";
+import HeroSection from "./components/HeroSection";
 
 const page = () => {
   return (
-    <div className="flex items-center justify-center pt-12 h-screen">page</div>
+    <div>
+      <HeroSection />
+    </div>
   );
 };
 

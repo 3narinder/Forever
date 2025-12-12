@@ -163,3 +163,7 @@
 .caption-m {
   @apply font-semibold text-xs;
 }
+
+.overlay-mb {
+  @apply font-semibold text-[10px] leading-4;
+}

@@ -1,3 +1,4 @@
+import { footerImages } from "./Images";
 import { FooterSection } from "./types";
 
 export const NavLInks = [
@@ -40,4 +41,11 @@ export const footerInfo: FooterSection[] = [
       { id: "visit", label: "Visit Us" },
     ],
   },
+];
+
+export const socialIcons = [
+  { name: "facebook", image: footerImages?.facebook },
+  { name: "instagram", image: footerImages?.instagram },
+  { name: "pinterest", image: footerImages?.pinterest },
+  { name: "tikTok", image: footerImages?.tikTok },
 ];
